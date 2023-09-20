@@ -56,6 +56,7 @@ public class Jogador extends Actor
     public void verificarPulo () {
         if (cimaPressionado()  && pulos>0) {
             velVertical = -alturaPulo;
+            setLocation(getX(), getY() + velVertical);
             pulos = pulos - 1;
         }
     }
@@ -78,7 +79,7 @@ public class Jogador extends Actor
             pulos = maxPulos;
         }
         
-        verificarPulo(); // Consertar pulo depois
+        verificarPulo();
     }
     
     public void act()
