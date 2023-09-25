@@ -15,12 +15,22 @@ public class Background extends World
      */
     public Background()
     {
-        super(600, 400, 1);
-        
-        Actor bloco = new Bloco();
-        addObject(bloco, 300, 300);
-        
-        Actor jogador = new Jogador("left", "up", "right", "down");
+        super(600, 400, 1, false);
+
+        Actor jogador = new Jogador("left", "space", "right", "down");
         addObject(jogador, 300, 50);
+        prepare();
+    }
+    
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Bloco bloco = new Bloco();
+        addObject(bloco,108,370);
+        Bloco bloco2 = new Bloco();
+        addObject(bloco2,470,370);
     }
 }

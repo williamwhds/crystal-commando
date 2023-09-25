@@ -10,7 +10,7 @@ public class Bloco extends Actor
 {
     public Bloco () {
         GreenfootImage sprite = getImage(); // Pegando sprite
-        sprite.scale(300,sprite.getHeight()*2); // Alterando largura e altura
+        sprite.scale(300,sprite.getHeight()*4); // Alterando largura e altura
     }
     public void act()
     {

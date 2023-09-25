@@ -6,15 +6,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (William Oliveira) 
  * @version (a version number or a date)
  */
+
+// A fazer:
+// Função key touch (retorna true somente uma vez ao pressionar)
+// Armas
+// Prender o jogador na tela
+// Colisão horizontal (se necessário)
+
 public class Jogador extends Actor
 {
     private String upKey, leftKey, downKey, rightKey;
     private int velVertical = 0;
+    private int maxVelVertical = 16;
     private int velHorizontal = 3;
     private int gravidade = 1;
     private int maxPulos = 1;
     private int pulos = 1;
-    private int alturaPulo = 8;
+    private int alturaPulo = 10;
     private int lado = 0;
     
     public Jogador (String leftKey, String upKey, String rightKey, String downKey) {
@@ -25,7 +33,7 @@ public class Jogador extends Actor
     }
     
     public boolean noChao () {
-        if (getOneObjectAtOffset(0, getImage().getHeight()/2, Bloco.class) != null) {
+        if (getOneObjectAtOffset(0, (getImage().getHeight()/2) + velVertical, Bloco.class) != null) {
             return true;
         }
         return false;
@@ -48,7 +56,7 @@ public class Jogador extends Actor
     }
     
     public void cair () {
-        if (velVertical > 16) velVertical = 16;
+        if (velVertical > maxVelVertical) velVertical = maxVelVertical;
         setLocation(getX(), getY() + velVertical);
         velVertical += gravidade;
     }
