@@ -33,7 +33,7 @@ public class Jogador extends Actor
     }
     
     public boolean noChao () {
-        if (getOneObjectAtOffset(0, (getImage().getHeight()/2) + velVertical, Bloco.class) != null) {
+        if (getOneObjectAtOffset(0, (getImage().getHeight()/2) + velVertical, Colisor.class) != null) {
             return true;
         }
         return false;

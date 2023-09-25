@@ -20,7 +20,7 @@ public class Background extends World
         Actor jogador = new Jogador("left", "space", "right", "down");
         addObject(jogador, 300, 50);
         
-        Administrador adm = new Administrador(this);
+        
         prepare();
     }
     
@@ -34,5 +34,11 @@ public class Background extends World
         addObject(bloco,35,370);
         Bloco bloco2 = new Bloco();
         addObject(bloco2,575,370);
+        Alien alien = new Alien();
+        addObject(alien,482,101);
+        Alien alien2 = new Alien();
+        addObject(alien2,121,112);
+        
+        Administrador adm = new Administrador(this);
     }
 }
