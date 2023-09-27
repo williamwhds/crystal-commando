@@ -24,6 +24,14 @@ public class Background extends World
         prepare();
     }
     
+    public Texto procurarTexto (String nomeTexto) {
+        for (Texto texto : getObjects(Texto.class))
+        {
+            if (texto.nomeTexto == nomeTexto) return texto;
+        }
+        return null;
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -38,7 +46,10 @@ public class Background extends World
         addObject(alien,482,101);
         Alien alien2 = new Alien();
         addObject(alien2,121,112);
-        
+
         Administrador adm = new Administrador(this);
+        Cristal cristal = new Cristal();
+        addObject(cristal,356,194);
+        cristal.setLocation(305,376);
     }
 }
