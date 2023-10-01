@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+                import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Background here.
@@ -17,7 +17,7 @@ public class Background extends World
     {
         super(600, 400, 1, false);
 
-        Actor jogador = new Jogador("left", "space", "right", "down");
+        Actor jogador = new JogadorRifle("left", "space", "right", "down", "z");
         addObject(jogador, 300, 50);
         
         
@@ -30,6 +30,12 @@ public class Background extends World
             if (texto.nomeTexto == nomeTexto) return texto;
         }
         return null;
+    }
+    
+    public void criarBala (int x, int y, int rotation) {
+        Bala bala = new Bala();
+        addObject(bala, x, y);
+        bala.setRotation(rotation);
     }
     
     /**

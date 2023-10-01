@@ -12,5 +12,6 @@ public class Administrador
     {
         this.world = world;
         System.out.println(world.getObjects(Alien.class));
+        System.out.println(this.world);
     }
 }

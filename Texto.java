@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Texto extends Actor
 {
-    public String nomeTexto; // Para identificar o objeto
+    public String nomeTexto; // Para retornar o objeto usando Administrador.procurarTexto(nomeTexto);
     public Texto (String texto, int tamanhoFonte, String nomeTexto) {
         setImage(new GreenfootImage(texto, tamanhoFonte, null, null));
         this.nomeTexto = nomeTexto;
