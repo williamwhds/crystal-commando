@@ -15,6 +15,19 @@ public class Bala extends Actor
     
     public Bala () {
     }
+    
+    public boolean foraDaTela () {
+        if (getX() > getWorld().getWidth() || getX() < 0 || getY() > getWorld().getHeight() || getY() < 0) {
+            return true;
+        }
+        return false;
+    }
+    
+    public void destruir () {
+        if (getWorld() != null) {
+            getWorld().removeObject(this);
+        }
+    }
     /**
      * Act - do whatever the Bala wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -22,5 +35,6 @@ public class Bala extends Actor
     public void act()
     {
         move(speed);
+        if (foraDaTela()) destruir();
     }
 }
