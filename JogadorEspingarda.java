@@ -6,10 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class JogadorRifle extends Jogador
+public class JogadorEspingarda extends Jogador
 {
     private String shootKey;
-    public JogadorRifle (String leftKey, String upKey, String rightKey, String downKey, String shootKey) {
+    public JogadorEspingarda (String leftKey, String upKey, String rightKey, String downKey, String shootKey) {
         super(leftKey, upKey, rightKey, downKey);
         this.shootKey = shootKey;
     }
@@ -21,8 +21,12 @@ public class JogadorRifle extends Jogador
     public void verificarTiro () {
         if (getWorld() != null) {
             if (tiroPressionado()) {
+                int angulo = -35; 
                 Background bg = (Background)getWorld();
-                bg.criarBala(getX(), getY(), 0, false);
+                for(int i = 0; i < 7; i++){
+                    bg.criarBala(getX(), getY(), angulo, true);
+                    angulo += 10;
+                }
             }
         }
     }

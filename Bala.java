@@ -17,6 +17,8 @@ public class Bala extends Actor
     }
     
     public boolean foraDaTela () {
+        if (getWorld() == null) return false;
+        
         if (getX() > getWorld().getWidth() || getX() < 0 || getY() > getWorld().getHeight() || getY() < 0) {
             return true;
         }

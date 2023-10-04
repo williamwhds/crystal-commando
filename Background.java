@@ -17,7 +17,7 @@ public class Background extends World
     {
         super(600, 400, 1, false);
 
-        Actor jogador = new JogadorRifle("left", "space", "right", "down", "z");
+        Actor jogador = new JogadorEspingarda("left", "space", "right", "down", "z");
         addObject(jogador, 300, 50);
         
         
@@ -32,10 +32,16 @@ public class Background extends World
         return null;
     }
     
-    public void criarBala (int x, int y, int rotation) {
-        Bala bala = new Bala();
-        addObject(bala, x, y);
-        bala.setRotation(rotation);
+    public void criarBala (int x, int y, int rotation, boolean espingarda) {
+        if (espingarda) {
+            Bala bala = new BalaEspingarda();
+            addObject(bala, x, y);
+            bala.setRotation(rotation);
+        } else {
+            Bala bala = new Bala();
+            addObject(bala, x, y);
+            bala.setRotation(rotation);
+        }
     }
     
     /**
