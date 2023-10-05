@@ -11,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Bala extends Actor
 {
-    int speed = 10;
+    int speed = 12;
     
     public Bala () {
     }

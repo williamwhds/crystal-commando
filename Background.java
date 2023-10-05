@@ -17,7 +17,7 @@ public class Background extends World
     {
         super(600, 400, 1, false);
 
-        Actor jogador = new JogadorEspingarda("left", "space", "right", "down", "z");
+        Actor jogador = new JogadorEspingarda("left", "*", "right", "down", "/");
         addObject(jogador, 300, 50);
         
         

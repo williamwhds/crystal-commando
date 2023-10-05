@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BalaEspingarda extends Bala
 {
-    int contador = 0;
+    int tempoVida = 0;
+    int maxTempoVida = 10;
     /**
      * Act - do whatever the BalaEspingarda wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,8 +25,8 @@ public class BalaEspingarda extends Bala
     public void act()
     {
         super.act();
-        contador += 1;
+        tempoVida += 1;
         
-        if (foraDaTela() || contador == 15) destruir();
+        if (foraDaTela() || tempoVida == maxTempoVida) destruir();
     }
 }
