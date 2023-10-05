@@ -1,7 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class ObjetoAnimado extends Actor {
-    // Declarar animações antes de usar gerarAnimacao()
+    // Declarar animações antes de usar gerarAnimacao().
+    // Caso a animação tenha apenas uma imagem, crie uma array
+    // com um elemento só.
+    // Ex.: private GreenfootImage[] animacao = {new GreenfootImage("PlayerRifleParado.png")};
     
     //private GreenfootImage[] animacaoAndar;
     private GreenfootImage[] animacaoAtual;

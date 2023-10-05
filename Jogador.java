@@ -8,8 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 
 // A fazer:
-// Função key touch (retorna true somente uma vez ao pressionar)
-// Armas
 // Prender o jogador na tela
 // Colisão horizontal (se necessário)
 

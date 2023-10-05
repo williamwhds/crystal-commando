@@ -15,7 +15,7 @@ public class JogadorEspingarda extends Jogador
     }
     
     public boolean tiroPressionado () {
-        return Greenfoot.isKeyDown(shootKey);
+        return shootKey.equals(Greenfoot.getKey());
     }
     
     public void verificarTiro () {
