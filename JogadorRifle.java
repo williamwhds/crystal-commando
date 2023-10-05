@@ -32,7 +32,7 @@ public class JogadorRifle extends Jogador
      */
     public void act()
     {
-        super.movimentar();
+        super.act();
         verificarTiro();
     }
 }

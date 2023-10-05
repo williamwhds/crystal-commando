@@ -23,7 +23,8 @@ public class Jogador extends Actor
     private int alturaPulo = 10;
     
     private int lado = 0;
-    private String ultimoLado;
+    private int ultimoLado = 0;
+    private boolean olhandoEsquerda = false;
     
     public Jogador (String leftKey, String upKey, String rightKey, String downKey) {
         this.upKey      = upKey;
@@ -73,18 +74,18 @@ public class Jogador extends Actor
         int esquerdo = esqPressionado() ? 1 : 0;    // Se a condicional for true, retorne 1.
         int direito = dirPressionado() ? 1 : 0;     // Caso contrário, retorne 0.
         
-        lado = esquerdo - direito;  // -1 se estiver se movendo pra esquerda, 1 se direita, 0 se os dois ou nenhum.
+        lado = direito - esquerdo;  // -1 se estiver se movendo pra esquerda, 1 se direita, 0 se os dois ou nenhum.
         
-        if (lado == -1) {
-            ultimoLado = "esquerda";
-        } else if (lado == 1) {
-            ultimoLado = "direita";
+        if (lado == 1) {
+            ultimoLado = 1;
+        } else if (lado == -1) {
+            ultimoLado = -1;
         }
     }
     
     public void movimentar () {
         verificarLado();
-        setLocation(getX() - (velHorizontal * lado), getY());
+        setLocation(getX() + (velHorizontal * lado), getY());
         
         if (!noChao()) {
             cair();
@@ -96,8 +97,23 @@ public class Jogador extends Actor
         verificarPulo();
     }
     
+    public void atualizarImagem() {
+    if (ultimoLado == -1 && !olhandoEsquerda) { // Se o jogador estiver indo para a esquerda
+        GreenfootImage imagemAtual = getImage();
+        imagemAtual.mirrorHorizontally(); // Espelha a imagem horizontalmente
+        setImage(imagemAtual); // Define a imagem espelhada
+        olhandoEsquerda = true;
+    } else if (ultimoLado == 1 && olhandoEsquerda) { // Se o jogador estiver indo para a direita
+        GreenfootImage imagemAtual = getImage();
+        imagemAtual.mirrorHorizontally(); // Espelha a imagem horizontalmente novamente para desfazer o espelhamento anterior
+        setImage(imagemAtual); // Define a imagem desespelhada
+        olhandoEsquerda = false;
+    }
+}
+    
     public void act()
     {
         movimentar();
+        atualizarImagem();
     }
 }

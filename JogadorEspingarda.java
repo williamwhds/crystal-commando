@@ -36,7 +36,7 @@ public class JogadorEspingarda extends Jogador
      */
     public void act()
     {
-        super.movimentar();
+        super.act();
         verificarTiro();
     }
 }
