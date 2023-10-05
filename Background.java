@@ -17,7 +17,7 @@ public class Background extends World
     {
         super(600, 400, 1, false);
 
-        Actor jogador = new JogadorEspingarda("left", "*", "right", "down", "/");
+        Actor jogador = new JogadorRifle("left", "*", "right", "down", "/");
         addObject(jogador, 300, 50);
         
         
@@ -58,8 +58,7 @@ public class Background extends World
         addObject(alien,482,101);
         Alien alien2 = new Alien();
         addObject(alien2,121,112);
-
-        Administrador adm = new Administrador(this);
+        
         Cristal cristal = new Cristal();
         addObject(cristal,356,194);
         cristal.setLocation(305,376);

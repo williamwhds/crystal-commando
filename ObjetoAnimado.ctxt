@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=ObjetoAnimado
+comment1.params=nomeImagem\ nImagens
+comment1.target=greenfoot.GreenfootImage[]\ gerarAnimacao(java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ animar()
+comment3.params=animacao
+comment3.target=void\ setAnimacaoAtual(greenfoot.GreenfootImage[])
+comment4.params=
+comment4.target=ObjetoAnimado()
+comment5.params=
+comment5.target=void\ act()
+numComments=6

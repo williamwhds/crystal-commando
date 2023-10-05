@@ -23,7 +23,9 @@ public class Jogador extends Actor
     private int maxPulos = 1;
     private int pulos = 1;
     private int alturaPulo = 10;
+    
     private int lado = 0;
+    private String ultimoLado;
     
     public Jogador (String leftKey, String upKey, String rightKey, String downKey) {
         this.upKey      = upKey;
@@ -74,6 +76,12 @@ public class Jogador extends Actor
         int direito = dirPressionado() ? 1 : 0;     // Caso contrário, retorne 0.
         
         lado = esquerdo - direito;  // -1 se estiver se movendo pra esquerda, 1 se direita, 0 se os dois ou nenhum.
+        
+        if (lado == -1) {
+            ultimoLado = "esquerda";
+        } else if (lado == 1) {
+            ultimoLado = "direita";
+        }
     }
     
     public void movimentar () {
