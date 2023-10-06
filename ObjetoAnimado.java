@@ -22,7 +22,19 @@ public class ObjetoAnimado extends Actor {
         return animacao;
     }
     
-    private void animar() {
+    public GreenfootImage[] gerarAnimacao (String nomeImagem, int nImagens, int escala) {
+        // Essa sobrecarga troca a escala/tamanho das imagens
+        int index = nImagens - 1;
+        GreenfootImage[] animacao = new GreenfootImage[index];
+        for (int i = 0; i < index ; i++) {
+            animacao[i] = new GreenfootImage(nomeImagem + i + ".png");
+            animacao[i].scale(animacao[i].getWidth()*escala, animacao[i].getWidth()*escala);
+        }
+        
+        return animacao;
+    }
+    
+    public void animar() {
         if (animacaoAtual != null) {
         contador++;
             if (contador >= tempoEntreFrames) {
@@ -33,8 +45,21 @@ public class ObjetoAnimado extends Actor {
         }
     }
     
-    private void setAnimacaoAtual (GreenfootImage[] animacao) {
+    public GreenfootImage[] getAnimacaoAtual () {
+        return this.animacaoAtual;
+    }
+    
+    public void setAnimacaoAtual (GreenfootImage[] animacao) {
         this.animacaoAtual = animacao;
+    }
+    
+    public GreenfootImage[] espelharAnimacao (GreenfootImage[] anim) {
+        GreenfootImage[] animEspelhada = new GreenfootImage[anim.length];
+        for (int i = 0; i < anim.length; i++) {
+            animEspelhada[i] = new GreenfootImage(anim[i]);
+            animEspelhada[i].mirrorHorizontally();
+        }
+        return animEspelhada;
     }
     
     public ObjetoAnimado () {

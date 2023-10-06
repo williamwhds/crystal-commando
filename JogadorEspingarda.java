@@ -23,6 +23,9 @@ public class JogadorEspingarda extends Jogador
             if (tiroPressionado()) {
                 int angulo = -35; 
                 Background bg = (Background)getWorld();
+                
+                
+                
                 for(int i = 0; i < 7; i++){
                     bg.criarBala(getX(), getY(), angulo, true);
                     angulo += 10;
