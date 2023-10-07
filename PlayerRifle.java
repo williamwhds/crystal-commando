@@ -74,8 +74,7 @@ public class PlayerRifle extends Player
         if (getOlhandoEsquerda()) {
             setAnimacaoAtual(animParadoEsq);
         } else setAnimacaoAtual(animParadoDir);
-        
-        movimentar();
+
         if (andando()) {
             setEstado("andando");
         }
@@ -86,8 +85,6 @@ public class PlayerRifle extends Player
             setAnimacaoAtual(animAndandoEsq);
         } else setAnimacaoAtual(animAndandoDir);
         
-        movimentar();
-        
         if (!andando()){
             setEstado("parado");
         }
@@ -95,20 +92,17 @@ public class PlayerRifle extends Player
     
     public void act()
     {
-        
-        
         switch (getEstado()) {
             case "parado":
                 estadoParado();
                 break;
             case "andando":
                 estadoAndando();
-                
                 break;
         }
         
+        movimentar();
+        verificarTiro();
         animar(); // Aplicando animação
-        
-        System.out.println(getOlhandoEsquerda());
     }
 }

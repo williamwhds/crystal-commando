@@ -62,6 +62,13 @@ public class ObjetoAnimado extends Actor {
         return animEspelhada;
     }
     
+    public boolean animacaoTerminou () {
+        if (frameAtual == animacaoAtual.length - 1) {
+            return true;
+        }
+        return false;
+    }
+    
     public ObjetoAnimado () {
         //this.animacaoAndar = gerarAnimacao("PlayerRifleAndando", 4);
         //setAnimacaoAtual(animacaoAndar);

@@ -11,10 +11,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 // Prender o jogador na tela
 // Colisão horizontal (se necessário)
 
-// Consertar:
-// andando() retorna true mesmo se esq e dir estiverem pressionados,
-// possivel conserto: ver se (lado != 0)
-
 public class Player extends ObjetoAnimado
 {
     private String upKey, leftKey, downKey, rightKey;
@@ -51,7 +47,7 @@ public class Player extends ObjetoAnimado
     }
     
     public boolean andando () {
-        if (esqPressionado() || dirPressionado()) {
+        if (lado != 0) {
             return true;
         }
         return false;

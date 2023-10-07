@@ -15,8 +15,8 @@ public class Background extends World
      */
     public Background()
     {
-        super(1280, 720, 1, false);
-
+        super(640, 360, 1, false);
+        //super(1280, 720, 1, false);
         Actor jogador = new PlayerRifle("left", "space", "right", "down", "z");
         addObject(jogador, 300, 50);
         
