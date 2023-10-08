@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=AlienComum
+comment1.params=
+comment1.target=void\ remover()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Alien\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=Cristal\ tocouCristal()
+comment3.params=
+comment3.target=boolean\ noChao()
+comment4.params=
+comment4.target=void\ cair()
+comment5.params=
+comment5.target=void\ moverMeio()
+comment6.params=
+comment6.target=void\ act()
+numComments=7
