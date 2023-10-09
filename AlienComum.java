@@ -2,19 +2,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class AlienComum extends Inimigo
 {
+    // Atributos
     private int velVertical = 0;
     private int maxVelVertical = 16;
     private int gravidade = 1;
     private int velHorizontal = 1;
     private int dano = 1; // Dano causado no cristal
     
+    // Animação
     private GreenfootImage[] animAndando;
+    
+    // Efeitos sonoros
+    private GreenfootSound somNasceu = new GreenfootSound("aliencomum_nasceu.wav");
+    private GreenfootSound somMorreu = new GreenfootSound("aliencomum_morreu.wav"); // AlienComum impede esse som de tocar pois está sendo deletado. Ver soluções depois.
+    
+    // Mover até cristal (DESENVOLVER MÉTODO PRA DETECTAR CRISTAL E IR EM DIREÇÃO DELE)
+    private int destinoX = 309;
+    //private int destinoY;
     
     public AlienComum () {
         setVida(2);
         animAndando = super.gerarAnimacao("InimigoComum", 2, 2);
         super.setAnimacaoAtual(animAndando);
         super.setTempoEntreFrames(20);
+        
+        somNasceu.setVolume(70);
+        somMorreu.setVolume(80);
+    }
+    
+    protected void addedToWorld (World world) {
+        somNasceu.play();
     }
     
     public void remover () {
@@ -34,9 +51,9 @@ public class AlienComum extends Inimigo
         super.setVida(vida);
     }
     
-    //public Cristal tocouCristal () {
-    //    return (Cristal)getOneObjectAtOffset(0, 0, Cristal.class);
-    //}
+    public Cristal tocouCristal () {
+        return (Cristal)getOneObjectAtOffset(0, 0, Cristal.class);
+    }
     public boolean noChao () {
         if (getOneObjectAtOffset(0, (getImage().getHeight()/2) + velVertical, Bloco.class) != null) {
             return true;
@@ -50,10 +67,12 @@ public class AlienComum extends Inimigo
         velVertical += gravidade;
     }
     
-    public void moverMeio () {
-        if (getX() > 302) {
+    public void moverAteCristal() {
+        if (getX() < destinoX) {
+            setLocation(getX() + velHorizontal, getY());
+        } else if (getX() > destinoX) {
             setLocation(getX() - velHorizontal, getY());
-        } else setLocation(getX() + velHorizontal, getY());
+        }
     }
     
     public void act()
@@ -63,19 +82,22 @@ public class AlienComum extends Inimigo
             return;
         }
         
-        //Cristal cristal = tocouCristal();
-        //if (cristal != null) {
-        //    cristal.setVida(cristal.getVida() - dano);
-        //    cristal.atualizarTextoVida();
-        //    remover();
-        //    return; // Sem isso o jogo crasha. Sempre usar return no método act() quando remover atores.
-        //}
+        Cristal cristal = tocouCristal();
+        if (cristal != null) {
+            cristal.setVida(cristal.getVida() - dano);
+            cristal.atualizarTxtVida();
+            cristal.tocarSomImpacto();
+            somMorreu.play();
+            remover();
+            return; // Sem isso o jogo crasha. Sempre usar return no método act() quando precisar usar remover() atores porém ainda há comandos.
+        }
         
         if (!noChao()) {
             cair();
         } else velVertical = 0;
         
-        moverMeio();
+        moverAteCristal();
         animar();
+        
     }
 }

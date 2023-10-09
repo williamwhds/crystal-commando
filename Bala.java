@@ -11,6 +11,7 @@ public class Bala extends Actor
     
     public Bala () {
         somTiro.setVolume(50);
+        somExplosao.setVolume(50);
     }
     
     public void tocarSomExplosao () {
