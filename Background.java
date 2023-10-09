@@ -63,5 +63,25 @@ public class Background extends World
 
         Bloco bloco2 = new Bloco();
         addObject(bloco2,539,342);
+        NuvemMedia nuvemMedia = new NuvemMedia(1);
+        addObject(nuvemMedia,551,66);
+        nuvemMedia.setLocation(561,61);
+        NuvemMedia nuvemMedia2 = new NuvemMedia(1);
+        addObject(nuvemMedia2,413,89);
+        removeObject(nuvemMedia2);
+        addObject(nuvemMedia2,412,95);
+        nuvemMedia2.setLocation(155,31);
+        nuvemMedia2.setLocation(109,35);
+        nuvemMedia.setLocation(580,115);
+        NuvemPequena nuvemPequena = new NuvemPequena(2);
+        addObject(nuvemPequena,449,65);
+        nuvemPequena.setLocation(406,70);
+        NuvemPequena nuvemPequena2 = new NuvemPequena(2);
+        addObject(nuvemPequena2,241,106);
+        nuvemPequena2.setLocation(181,136);
+        nuvemPequena.setLocation(434,53);
+        NuvemMedia nuvemMedia3 = new NuvemMedia(1);
+        addObject(nuvemMedia3,336,87);
+        nuvemMedia3.setLocation(326,82);
     }
 }
