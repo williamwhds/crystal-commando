@@ -75,6 +75,12 @@ public class AlienComum extends Inimigo
         }
     }
     
+    public void criarExplosao () {
+        if (getWorld() != null) {
+            getWorld().addObject(new Explosao(), getX(), getY());
+        }
+    }
+    
     public void act()
     {
         if (vida <= 0) {
@@ -87,6 +93,7 @@ public class AlienComum extends Inimigo
             cristal.setVida(cristal.getVida() - dano);
             cristal.atualizarTxtVida();
             cristal.tocarSomImpacto();
+            criarExplosao();
             somMorreu.play();
             remover();
             return; // Sem isso o jogo crasha. Sempre usar return no método act() quando precisar usar remover() atores porém ainda há comandos.
