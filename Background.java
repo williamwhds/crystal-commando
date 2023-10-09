@@ -50,17 +50,18 @@ public class Background extends World
      */
     private void prepare()
     {
-        Bloco bloco = new Bloco();
-        addObject(bloco,35,370);
-        Bloco bloco2 = new Bloco();
-        addObject(bloco2,575,370);
         Inimigo alien = new AlienComum();
         addObject(alien,482,101);
         Inimigo alien2 = new AlienComum();
         addObject(alien2,121,112);
-        
-        Cristal cristal = new Cristal();
-        addObject(cristal,356,194);
-        cristal.setLocation(305,376);
+
+        //Cristal cristal = new Cristal();
+        //addObject(cristal,356,194);
+        //cristal.setLocation(305,376);
+        Bloco bloco = new Bloco();
+        addObject(bloco,179,342);
+
+        Bloco bloco2 = new Bloco();
+        addObject(bloco2,539,342);
     }
 }

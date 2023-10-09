@@ -34,9 +34,9 @@ public class AlienComum extends Inimigo
         super.setVida(vida);
     }
     
-    public Cristal tocouCristal () {
-        return (Cristal)getOneObjectAtOffset(0, 0, Cristal.class);
-    }
+    //public Cristal tocouCristal () {
+    //    return (Cristal)getOneObjectAtOffset(0, 0, Cristal.class);
+    //}
     public boolean noChao () {
         if (getOneObjectAtOffset(0, (getImage().getHeight()/2) + velVertical, Bloco.class) != null) {
             return true;
@@ -63,13 +63,13 @@ public class AlienComum extends Inimigo
             return;
         }
         
-        Cristal cristal = tocouCristal();
-        if (cristal != null) {
-            cristal.setVida(cristal.getVida() - dano);
-            cristal.atualizarTextoVida();
-            remover();
-            return; // Sem isso o jogo crasha. Sempre usar return no método act() quando remover atores.
-        }
+        //Cristal cristal = tocouCristal();
+        //if (cristal != null) {
+        //    cristal.setVida(cristal.getVida() - dano);
+        //    cristal.atualizarTextoVida();
+        //    remover();
+        //    return; // Sem isso o jogo crasha. Sempre usar return no método act() quando remover atores.
+        //}
         
         if (!noChao()) {
             cair();

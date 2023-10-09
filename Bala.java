@@ -7,7 +7,7 @@ public class Bala extends Actor
     private GreenfootSound somTiro = new GreenfootSound("gunshot.mp3");
     
     // Atributos
-    private int speed = 12;
+    private int speed = 15;
     
     public Bala () {
         somTiro.setVolume(50);

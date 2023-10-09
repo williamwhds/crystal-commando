@@ -40,7 +40,7 @@ public class Player extends ObjetoAnimado
     }
     
     public boolean noChao () {
-        if (getOneObjectAtOffset(0, (getImage().getHeight()/2) + velVertical, Colisor.class) != null) {
+        if (getOneObjectAtOffset(0, (getImage().getHeight()/2) + velVertical, Bloco.class) != null) {
             return true;
         }
         return false;
