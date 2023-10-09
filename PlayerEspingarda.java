@@ -7,11 +7,27 @@ public class PlayerEspingarda extends Player
     private GreenfootImage[] animParadoEsq;
     private GreenfootImage[] animAndandoDir, animAndandoEsq;
     
+    // Atributos
     private String shootKey;
+    
+    // Efeitos sonoros
+    // somTiro fica aqui ao invés de BalaEspingarda pois
+    // do contrário, cada bala faria seu som individual.
+    private GreenfootSound somTiro = new GreenfootSound("gunshot.mp3");
+    
     
     public PlayerEspingarda (String leftKey, String upKey, String rightKey, String downKey, String shootKey) {
         super(leftKey, upKey, rightKey, downKey);
         this.shootKey = shootKey;
+        
+        somTiro.setVolume(50);
+    }
+    
+    public void tocarSomTiro () {
+        if (somTiro.isPlaying()) {
+            somTiro.stop();
+        }
+        somTiro.play();
     }
     
     protected void addedToWorld (World world) {
@@ -38,11 +54,19 @@ public class PlayerEspingarda extends Player
         if (getWorld() != null) {
             if (tiroPressionado()) {
                 Background bg = (Background)getWorld();
-                
+                tocarSomTiro();
                 if (getOlhandoEsquerda()) {
-                    bg.criarBalaEspingarda(getX(), getY(), 180);
+                    int angulo = 200;
+                    for (int i = 0; i < 4; i++) {
+                        bg.criarBalaEspingarda(getX() - 15, getY(), angulo);
+                        angulo -= 15; // Diminui o ângulo para espalhar os tiros
+                    }
                 } else {
-                    bg.criarBalaEspingarda(getX(), getY(), 0);
+                    int angulo = -20;
+                    for(int i = 0; i < 4; i++){
+                        bg.criarBalaEspingarda(getX() + 15, getY(), angulo);
+                        angulo += 15;
+                    }
                 }
             }
         }

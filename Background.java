@@ -72,8 +72,11 @@ public class Background extends World
         addObject(cristal,309,292);
         
         // Jogadores
-        Actor jogador = new PlayerRifle("left", "space", "right", "down", "z");
-        addObject(jogador, 300, 50);
+        //Actor jogadorRifle = new PlayerRifle("left", "/", "right", "down", "*");
+        //addObject(jogadorRifle, 300, 50);
+        
+        Actor jogadorEspingarda = new PlayerEspingarda("a", "g", "d", "s", "h");
+        addObject(jogadorEspingarda, 300, 50);
         
         // Plataformas
         Bloco bloco = new Bloco();
