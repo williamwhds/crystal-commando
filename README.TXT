@@ -20,7 +20,8 @@ preciso rifle.
 
 ------------------------------------------------------------------------
 
-				Autores
+				Créditos
 
 William W. C. Oliveira (Programação e arte)
 Matheus Ferreira (Arte)
+PandaBeatsMusic (Música)

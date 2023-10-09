@@ -1,19 +1,30 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Bala here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-
-// FAZER BALA SUMIR QUANDO ELA SAI DO CENARIO <<<<<<<<<<<<<<<<
-
 public class Bala extends Actor
 {
-    int speed = 12;
+    // Efeitos sonoros
+    private GreenfootSound somExplosao = new GreenfootSound("explosion.mp3");
+    private GreenfootSound somTiro = new GreenfootSound("gunshot.mp3");
+    
+    // Atributos
+    private int speed = 12;
     
     public Bala () {
+        somTiro.setVolume(50);
+    }
+    
+    public void tocarSomExplosao () {
+        if (somExplosao.isPlaying()) {
+            somExplosao.stop();
+        }
+        somExplosao.play();
+    }
+    
+    public void tocarSomTiro () {
+        if (somTiro.isPlaying()) {
+            somTiro.stop();
+        }
+        somTiro.play();
     }
     
     public boolean foraDaTela () {
@@ -42,13 +53,15 @@ public class Bala extends Actor
         if (inimigo != null) {
             inimigo.setVida(inimigo.getVida() - 1);
             criarExplosao();
+            tocarSomExplosao();
             destruir();
         }
     }
-    /**
-     * Act - do whatever the Bala wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
+    protected void addedToWorld (World world) {
+        tocarSomTiro();
+    }
+    
     public void act()
     {
         danificandoInimigo();

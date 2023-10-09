@@ -7,6 +7,7 @@ public class PlayerRifle extends Player
     private GreenfootImage[] animParadoEsq;
     private GreenfootImage[] animAndandoDir, animAndandoEsq;
     
+    // Atributos
     private String shootKey;
     
     public PlayerRifle (String leftKey, String upKey, String rightKey, String downKey, String shootKey) {
@@ -38,7 +39,6 @@ public class PlayerRifle extends Player
         if (getWorld() != null) {
             if (tiroPressionado()) {
                 Background bg = (Background)getWorld();
-                
                 if (getOlhandoEsquerda()) {
                     bg.criarBalaRifle(getX(), getY(), 180);
                 } else {
