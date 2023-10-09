@@ -17,9 +17,6 @@ public class Background extends World
     {
         super(640, 360, 1, false);
         //super(1280, 720, 1, false);
-        Actor jogador = new PlayerRifle("left", "space", "right", "down", "z");
-        addObject(jogador, 300, 50);
-        
         
         prepare();
     }
@@ -50,6 +47,12 @@ public class Background extends World
      */
     private void prepare()
     {
+        Cristal cristal = new Cristal();
+        addObject(cristal,309,292);
+        
+        Actor jogador = new PlayerRifle("left", "space", "right", "down", "z");
+        addObject(jogador, 300, 50);
+        
         Inimigo alien = new AlienComum();
         addObject(alien,482,101);
         Inimigo alien2 = new AlienComum();
@@ -58,30 +61,28 @@ public class Background extends World
         //Cristal cristal = new Cristal();
         //addObject(cristal,356,194);
         //cristal.setLocation(305,376);
+
         Bloco bloco = new Bloco();
         addObject(bloco,179,342);
 
         Bloco bloco2 = new Bloco();
         addObject(bloco2,539,342);
+
         NuvemMedia nuvemMedia = new NuvemMedia(1);
-        addObject(nuvemMedia,551,66);
-        nuvemMedia.setLocation(561,61);
+        addObject(nuvemMedia,580,115);
+
         NuvemMedia nuvemMedia2 = new NuvemMedia(1);
-        addObject(nuvemMedia2,413,89);
-        removeObject(nuvemMedia2);
-        addObject(nuvemMedia2,412,95);
-        nuvemMedia2.setLocation(155,31);
-        nuvemMedia2.setLocation(109,35);
-        nuvemMedia.setLocation(580,115);
+        addObject(nuvemMedia2,109,35);
+
         NuvemPequena nuvemPequena = new NuvemPequena(2);
-        addObject(nuvemPequena,449,65);
-        nuvemPequena.setLocation(406,70);
+        addObject(nuvemPequena,434,53);
+
         NuvemPequena nuvemPequena2 = new NuvemPequena(2);
-        addObject(nuvemPequena2,241,106);
-        nuvemPequena2.setLocation(181,136);
-        nuvemPequena.setLocation(434,53);
+        addObject(nuvemPequena2,181,136);
+
         NuvemMedia nuvemMedia3 = new NuvemMedia(1);
-        addObject(nuvemMedia3,336,87);
-        nuvemMedia3.setLocation(326,82);
+        addObject(nuvemMedia3,326,82);
+        
+        
     }
 }
