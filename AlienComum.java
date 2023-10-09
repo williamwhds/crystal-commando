@@ -6,15 +6,32 @@ public class AlienComum extends Inimigo
     private int maxVelVertical = 16;
     private int gravidade = 1;
     private int velHorizontal = 1;
+    private int dano = 1; // Dano causado no cristal
     
-    private int dano = 1;
-    /**
-     * Act - do whatever the Alien wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private GreenfootImage[] animAndando;
+    
+    public AlienComum () {
+        setVida(2);
+        animAndando = super.gerarAnimacao("InimigoComum", 2, 2);
+        super.setAnimacaoAtual(animAndando);
+        super.setTempoEntreFrames(20);
+    }
+    
     public void remover () {
         if (getWorld() == null) return;
         getWorld().removeObject(this);
+    }
+    
+    public void animar () {
+        super.animar();
+    }
+    
+    public int getVida () {
+        return super.getVida();
+    }
+    
+    public void setVida (int vida) {
+        super.setVida(vida);
     }
     
     public Cristal tocouCristal () {
@@ -41,6 +58,11 @@ public class AlienComum extends Inimigo
     
     public void act()
     {
+        if (vida <= 0) {
+            remover();
+            return;
+        }
+        
         Cristal cristal = tocouCristal();
         if (cristal != null) {
             cristal.setVida(cristal.getVida() - dano);
@@ -54,5 +76,6 @@ public class AlienComum extends Inimigo
         } else velVertical = 0;
         
         moverMeio();
+        animar();
     }
 }

@@ -1,17 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Inimigo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Inimigo extends ObjetoAnimado
 {
-    /**
-     * Act - do whatever the Inimigo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int vida = 1; // Trocar de acordo com inimigo
+    
+    public void setVida (int vida) {
+        this.vida = vida;
+    }
+    
+    public int getVida () {
+        return this.vida;
+    }
+    
     public void act()
     {
         // Add your action code here.

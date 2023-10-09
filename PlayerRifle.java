@@ -40,9 +40,9 @@ public class PlayerRifle extends Player
                 Background bg = (Background)getWorld();
                 
                 if (getOlhandoEsquerda()) {
-                    bg.criarBala(getX(), getY(), 180, false);
+                    bg.criarBalaRifle(getX(), getY(), 180);
                 } else {
-                    bg.criarBala(getX(), getY(), 0, false);
+                    bg.criarBalaRifle(getX(), getY(), 0);
                 }
             }
         }

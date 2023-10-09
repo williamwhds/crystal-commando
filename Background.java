@@ -32,16 +32,16 @@ public class Background extends World
         return null;
     }
     
-    public void criarBala (int x, int y, int rotation, boolean espingarda) {
-        if (espingarda) {
-            Bala bala = new BalaEspingarda();
-            addObject(bala, x, y);
-            bala.setRotation(rotation);
-        } else {
-            Bala bala = new Bala();
-            addObject(bala, x, y);
-            bala.setRotation(rotation);
-        }
+    public void criarBalaRifle (int x, int y, int rotation) {
+        Bala bala = new Bala();
+        addObject(bala, x, y);
+        bala.setRotation(rotation);
+    }
+    
+    public void criarBalaEspingarda (int x, int y, int rotation) {
+        Bala bala = new BalaEspingarda();
+        addObject(bala, x, y);
+        bala.setRotation(rotation);
     }
     
     /**
@@ -54,9 +54,9 @@ public class Background extends World
         addObject(bloco,35,370);
         Bloco bloco2 = new Bloco();
         addObject(bloco2,575,370);
-        Alien alien = new Alien();
+        Inimigo alien = new AlienComum();
         addObject(alien,482,101);
-        Alien alien2 = new Alien();
+        Inimigo alien2 = new AlienComum();
         addObject(alien2,121,112);
         
         Cristal cristal = new Cristal();

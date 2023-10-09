@@ -13,7 +13,7 @@ public class ObjetoAnimado extends Actor {
     private int contador = 0;
     
     public GreenfootImage[] gerarAnimacao (String nomeImagem, int nImagens) {
-        int index = nImagens - 1;
+        int index = nImagens;
         GreenfootImage[] animacao = new GreenfootImage[index];
         for (int i = 0; i < index ; i++) {
             animacao[i] = new GreenfootImage(nomeImagem + i + ".png");
@@ -24,7 +24,7 @@ public class ObjetoAnimado extends Actor {
     
     public GreenfootImage[] gerarAnimacao (String nomeImagem, int nImagens, int escala) {
         // Essa sobrecarga troca a escala/tamanho das imagens
-        int index = nImagens - 1;
+        int index = nImagens;
         GreenfootImage[] animacao = new GreenfootImage[index];
         for (int i = 0; i < index ; i++) {
             animacao[i] = new GreenfootImage(nomeImagem + i + ".png");
@@ -52,6 +52,10 @@ public class ObjetoAnimado extends Actor {
     public void setAnimacaoAtual (GreenfootImage[] animacao) {
         this.animacaoAtual = animacao;
     }
+    
+    public void setTempoEntreFrames (int tempo) {
+        this.tempoEntreFrames = tempo;
+    } 
     
     public GreenfootImage[] espelharAnimacao (GreenfootImage[] anim) {
         GreenfootImage[] animEspelhada = new GreenfootImage[anim.length];

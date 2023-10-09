@@ -30,12 +30,28 @@ public class Bala extends Actor
             getWorld().removeObject(this);
         }
     }
+    
+    public void criarExplosao () {
+        if (getWorld() != null) {
+            getWorld().addObject(new Explosao(), getX(), getY());
+        }
+    }
+    
+    public void danificandoInimigo () { 
+        Inimigo inimigo = (Inimigo)getOneIntersectingObject(Inimigo.class);
+        if (inimigo != null) {
+            inimigo.setVida(inimigo.getVida() - 1);
+            criarExplosao();
+            destruir();
+        }
+    }
     /**
      * Act - do whatever the Bala wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
+        danificandoInimigo();
         move(speed);
         if (foraDaTela()) destruir();
     }
