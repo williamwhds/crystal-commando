@@ -9,14 +9,9 @@
               |___/                                                                          
 ------------------------------------------------------------------------
 
-O jogo "Crystal Commando" é um projeto desenvolvido como parte de nossa disciplina de Programação Orientada a Objetos. 
-Nosso objetivo ao criar este jogo é aplicar os conceitos e técnicas aprendidos ao longo do curso para desenvolver uma
-experiência interativa para os jogadores.
+O jogo "Crystal Commando" é um projeto desenvolvido como parte de nossa disciplina de Programação Orientada a Objetos. Nosso objetivo ao criar este jogo é aplicar os conceitos e técnicas aprendidos ao longo do curso para desenvolver uma experiência interativa para os jogadores.
 
-Nesse projeto, dois jogadores vão defender um cristal de alienígenas que querem destruí-lo. Os jogadores devem suportar
-várias ondas de inimigos, cada vez mais desafiadoras, enquanto trabalham em equipe para proteger o cristal. Cada jogador
-assume o papel de um soldado, sendo que um deles está armado com uma poderosa espingarda, enquanto o outro possui um
-preciso rifle.
+Nesse projeto, dois jogadores vão defender um cristal de alienígenas que querem destruí-lo. Os jogadores devem suportar várias ondas de inimigos, cada vez mais desafiadoras, enquanto trabalham em equipe para proteger o cristal. Cada jogador assume o papel de um soldado, sendo que um deles está armado com uma poderosa espingarda, enquanto o outro possui um preciso rifle.
 
 ------------------------------------------------------------------------
 
