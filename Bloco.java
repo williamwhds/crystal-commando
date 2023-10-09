@@ -1,19 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Bloco here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Bloco extends Actor
 {
     public Bloco () {
-        GreenfootImage sprite = getImage(); // Pegando sprite
-        sprite.scale(300,sprite.getHeight()*4); // Alterando largura e altura
+        
+        getImage().scale(getImage().getWidth()*20, getImage().getHeight()*2);
     }
+    
     public void act()
     {
-        
     }
 }

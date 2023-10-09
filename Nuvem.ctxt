@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Nuvem
+comment1.params=velocidade
+comment1.target=Nuvem(int)
+comment2.params=
+comment2.target=void\ mover()
+comment3.params=
+comment3.target=void\ voltarPraTela()
+comment4.params=
+comment4.target=void\ act()
+numComments=5

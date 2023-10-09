@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Bala
+comment1.params=
+comment1.target=Bala()
+comment2.params=
+comment2.target=void\ tocarSomExplosao()
+comment3.params=
+comment3.target=void\ tocarSomTiro()
+comment4.params=
+comment4.target=boolean\ foraDaTela()
+comment5.params=
+comment5.target=void\ destruir()
+comment6.params=
+comment6.target=void\ criarExplosao()
+comment7.params=
+comment7.target=void\ danificandoInimigo()
+comment8.params=world
+comment8.target=void\ addedToWorld(greenfoot.World)
+comment9.params=
+comment9.target=void\ act()
+numComments=10
