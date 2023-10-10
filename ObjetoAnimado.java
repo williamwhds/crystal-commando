@@ -34,6 +34,12 @@ public class ObjetoAnimado extends Actor {
         return animacao;
     }
     
+    /*
+        O método animar() foi desenvolvido com informações retiradas do
+        fórum do Greenfoot e adaptado com auxílio de IA (ChatGPT-3.5).
+        
+        https://www.greenfoot.org/topics/64544/0
+    */
     public void animar() {
         if (animacaoAtual != null) {
         contador++;
